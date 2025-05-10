@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <center>
+      <br>
+      <marquee direction="left"
+          style="height: 50px; color: rgb(2, 46, 31); background-color:white; padding: 1px; border-radius: 12px;">
+          <h2>
+              <p>choose the type of convert and number </p>  
+          </h2>
+      </marquee>
+  </center>
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <button onclick="appendCharacter('Km : m(')">km : m</button>
+      <button onclick="appendCharacter('Km : cm(')">km:cm </button>
+      <button onclick="appendCharacter('Km : mm(')">km:mm</button>
+
+      <button onclick="appendCharacter('m : Km(')">m:km</button>
+      <button onclick="appendCharacter('m : cm(')">m:cm</button>
+      <button onclick="appendCharacter('m : mm(')">m:mm</button>
+
+      <button onclick="appendCharacter('cm : km(')">cm:km</button>
+      <button onclick="appendCharacter('cm : m(')">cm:m</button>
+      <button onclick="appendCharacter('cm : mm(')">cm:mm</button>
+
+      <button onclick="appendCharacter('mm : km(')">mm:km</button>
+      <button onclick="appendCharacter('mm : m(')">mm:m</button>
+      <button onclick="appendCharacter('mm : cm(')">mm:cm</button>
+      <button onclick="appendCharacter('7')">7</button>
+      <button onclick="appendCharacter('8')">8</button>
+      <button onclick="appendCharacter('9')">9</button>
+      <button onclick="appendCharacter('(')">(</button>
+      <button onclick="appendCharacter('4')">4</button>
+      <button onclick="appendCharacter('5')">5</button>
+      <button onclick="appendCharacter('6')">6</button>
+      <button onclick="appendCharacter(')')">)</button>
+      <button onclick="appendCharacter('1')">1</button>
+      <button onclick="appendCharacter('2')">2</button>
+      <button onclick="appendCharacter('3')">3</button>
+      <button onclick="appendCharacter('.')">.</button>
+      <button onclick="clearDisplay()">DEL</button>
+      <button onclick="appendCharacter('0')">0</button>
+      <button onclick="calculate()">=</button>  
+
+      <div class="back"><button onclick=""><a href=" convert.html " >Back</a></button></div>
+      
+      
+    </div>
+   
+    <div class="history">
+      <h3>History</h3>
+      <ul id="historyList"></ul>
+    </div>
+<!-- <script src=""></script> -->
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+</body>
+</html>

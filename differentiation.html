@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <style>
+.buttons button {
+  width: 80px;
+  height: 50px;
+  margin: 5px;
+  font-size: 1rem;
+  border: none;
+  background-color: #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.buttons button:hover {
+  background-color: #3b96ea;
+}
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <center>
+      <br>
+      <marquee direction="left"
+          style="height: 50px; color: rgb(2, 46, 31); background-color:white; padding: 1px; border-radius: 12px;">
+          <h2>
+              <p>low of  dufferntiation</p>
+          </h2>
+      </marquee>
+  </center>
+    <input type="text" id="display" disabled>
+
+    <div class="buttons">
+      
+        <button class="sindiff" onclick="diff_sin()"> Sin</button>
+        <button class="cosdiff" onclick="diff_cos()">Cos</button>
+        <button class="tandiff" onclick="diff_tan()">Tan</button>
+        <button class="secdiff" onclick="diff_sec()">Sec</button>
+        
+        <button class="cosecdiff" onclick="cosec_diff()">Cosec</a></button>
+        <button class="cotdiff" onclick="cot_diff()">Cot</a</button>
+        <button class="sinhdiff" onclick="sinh_diff()">sinh</a</button>
+        <button class="coshdiff"onclick="cosh_diff()">cosh</a></button>
+        <button class="tanhdiff"onclick="tanh_diff()">tanh</a></button>
+        <button class="sine-1diff"onclick="sinenv_diff()">sin<sup>-1</sup></button>
+        <button class="cos-1diff" onclick="cosenv_diff()">cos<sup>-1</sup></button>
+        <button class="tan-1diff"onclick="tanenv_diff()"> tan<sup>-1</sup></button>
+        <button class="sinh-1diff"onclick="sinhenv_diff()">sinh<sup>-1</sup></button>
+        <button class="cosh-1diff" onclick="coshenv_diff()">cosh<sup>-1</sup></button>
+        <button class="tanh-1diff" onclick="tanhenv_diff()">tanh<sup>-1</sup></button>
+    
+        <div class="buttons">
+            <button onclick=""><a href=" more.html " >Back</a></button>
+            <button onclick="clearDisplay()">Del</button>
+          </div>
+      
+    </div>
+   
+
+<!-- <script src=""></script> -->
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+</body>
+</html>

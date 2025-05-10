@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <style>
+.buttons button {
+  width: 80px;
+  height: 50px;
+  margin: 5px;
+  font-size: 1rem;
+  border: none;
+  background-color: #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.buttons button:hover {
+  background-color: #3b96ea;
+}
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <center>
+      <br>
+      <marquee direction="left"
+          style="height: 50px; color: rgb(2, 46, 31); background-color:white; padding: 1px; border-radius: 12px;">
+          <h2>
+              <p>choose to calculate</p>
+          </h2>
+      </marquee>
+  </center>
+    <input type="text" id="display" disabled>
+
+    <div class="buttons">
+     
+      <button class="perimetertriangle" onclick="">  <a href="triangle perimeter .html">triangle</a></button>
+      <button class="perimetersqeur" onclick=""> <a href="squer perimeter .html">sqeur</a></button>
+      <button class="perimeterparrale" onclick=""> <a href="parrale perimeter.html">parrale</a></button>
+      <button class="perimetercircal" onclick=""> <a href="circale perimeter.html">circal</a></button>
+      <button class="perimeterrectangle" onclick=""> <a href="rectangle perimeter .html">rectangle</a></button>
+   
+   
+        <div class="buttons">
+            <button onclick=""><a href=" more.html " >Back</a></button>
+          </div>
+      
+    </div>
+   
+
+<!-- <script src=""></script> -->
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+</body>
+</html>

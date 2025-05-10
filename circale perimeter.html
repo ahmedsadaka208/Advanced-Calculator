@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <center>
+      <br>
+      <marquee direction="left"
+          style="height: 50px; color: rgb(2, 46, 31); background-color:white; padding: 1px; border-radius: 12px;">
+          <h2>
+              <p>calculate perimeter Of circal  </p>
+          </h2>
+      </marquee>
+  </center>
+   
+    <input type="text" placeholder=" 2 * 3.14 * radius " id="display" disabled>
+
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="deleteLast()">DEL</button>
+      <button onclick="appendCharacter('(')">(</button>
+      <button onclick="appendCharacter(')')">)</button>
+      <button onclick="appendCharacter('log(')">log</button>
+      <button onclick="appendCharacter('tan(')">tan</button>
+      <button onclick="appendCharacter('cos(')">cos</button>
+      <button onclick="appendCharacter('sin(')">sin</button>
+      <button onclick="appendCharacter('sqrt(')">√</button>
+      <button onclick="appendCharacter('/')">/</button>
+      <button onclick="appendCharacter('*')">*</button>
+      <button onclick="appendCharacter('-')">-</button>
+      <button onclick="appendCharacter('7')">7</button>
+      <button onclick="appendCharacter('8')">8</button>
+      <button onclick="appendCharacter('9')">9</button>
+      <button onclick="appendCharacter('+')">+</button>
+      <button onclick="appendCharacter('4')">4</button>
+      <button onclick="appendCharacter('5')">5</button>
+      <button onclick="appendCharacter('6')">6</button>
+      <button onclick="appendCharacter('.')">.</button>
+      <button onclick="appendCharacter('1')">1</button>
+      <button onclick="appendCharacter('2')">2</button>
+      <button onclick="appendCharacter('3')">3</button>
+      <button onclick="calculate()">=</button>
+      
+      <button onclick="appendCharacter('0')">0</button>
+
+      <div class="buttons">
+        <button onclick=""><a href="perimeter.html " >Back</a></button>
+      </div>
+    </div>
+   
+    <div class="history">
+      <h3>History</h3>
+      <ul id="historyList"></ul>
+    </div>
+<!-- <script src=""></script> -->
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+</body>
+</html>

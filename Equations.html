@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equations Solver</title>
+  <script>
+    function showInputs() {
+      // الحصول على نوع المعادلة
+      const type = document.getElementById('equationType').value;
+      const inputsArea = document.getElementById('inputsArea');
+      const solveButtonArea = document.getElementById('solveButtonArea');
+  
+      // مسح المدخلات والزرار
+      inputsArea.innerHTML = '';
+      solveButtonArea.innerHTML = '';
+  
+      if (type === 'linear') {
+        // لو المعادلة خطية
+        inputsArea.innerHTML = `
+          <input type="number" id="a" placeholder="Enter a">
+          <input type="number" id="b" placeholder="Enter b">
+        `;
+        solveButtonArea.innerHTML = `<button onclick="solveLinear()">Solve Linear</button>`;
+      } else if (type === 'quadratic') {
+        // لو المعادلة تربيعية
+        inputsArea.innerHTML = `
+          <input type="number" id="a" placeholder="Enter a">
+          <input type="number" id="b" placeholder="Enter b">
+          <input type="number" id="c" placeholder="Enter c">
+        `;
+        solveButtonArea.innerHTML = `<button onclick="solveQuadratic()">Solve Quadratic</button>`;
+      }
+    }
+  
+    function solveLinear() {
+      // قراءة قيم a و b
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+  
+      // تحقق من صحة الأرقام
+      if (isNaN(a) || isNaN(b)) {
+        document.getElementById('result').value = "Please enter valid numbers.";
+        return;
+      }
+  
+      if (a === 0) {
+        document.getElementById('result').value = "No solution (a cannot be zero).";
+        return;
+      }
+  
+      // حساب x
+      const x = -b / a;
+      document.getElementById('result').value = `Solution: x = ${x}`;
+    }
+  
+    function solveQuadratic() {
+      // قراءة قيم a, b, c
+      const a = parseFloat(document.getElementById('a').value);
+      const b = parseFloat(document.getElementById('b').value);
+      const c = parseFloat(document.getElementById('c').value);
+  
+      // تحقق من صحة الأرقام
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        document.getElementById('result').value = "Please enter valid numbers.";
+        return;
+      }
+  
+      if (a === 0) {
+        document.getElementById('result').value = "Not a quadratic equation (a cannot be zero).";
+        return;
+      }
+  
+      const delta = b * b - 4 * a * c;
+  
+      if (delta < 0) {
+        document.getElementById('result').value = "No real solutions.";
+      } else if (delta === 0) {
+        const x = -b / (2 * a);
+        document.getElementById('result').value = `One solution: x = ${x}`;
+      } else {
+        const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+        document.getElementById('result').value = `Solutions: x1 = ${x1}, x2 = ${x2}`;
+      }
+    }
+    themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
+  </script>
+  <style>
+    body {
+      padding-top: 90px;
+border: 2px rgb(10, 9, 9) solid;
+border-radius: 20PX;
+border-style:dashed;
+height: 700px;;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #13343c;
+    }
+    input, select, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #d60707;
+    }
+    #result{
+      width: 300px;
+      height: 50px;
+      background-color: rgb(0, 0, 0);
+      color: #e0e0e0;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <center>
+    <br>
+    <marquee direction="left"
+        style="height: 60px; width: 406px; color: rgb(205, 241, 229); background-color:rgb(9, 8, 8); padding: 1px; border-radius: 12px;">
+        <h2>
+            <p>Equations Solver</p>
+        </h2>
+    </marquee>
+</center>
+  <!-- مكان لعرض النتيجة -->
+  <input type="text" id="result" placeholder="result = " disabled>
+  <div class="container">
+  <!-- اختيار نوع المعادلة -->
+  <select id="equationType" onchange="showInputs()">
+    <option value="">-- Select Equation Type --</option>
+    <option value="linear">Linear (ax + b = 0)</option>
+    <option value="quadratic">Quadratic (ax² + bx + c = 0)</option>
+  </select>
+  <!-- مدخلات القيم -->
+  <div id="inputsArea"></div>
+  <!-- زرار الحل -->
+  <div id="solveButtonArea"></div>
+</div>
+<div>
+  <button onclick="location.href='more.html'">Back</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convert Number System</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+<script>
+  // دالة التحويل
+  function convertNumber() {
+    let number = document.getElementById('numberInput').value;
+    let conversionType = document.getElementById('conversionType').value;
+    let result = '';
+
+    if (conversionType === 'decToBin') {
+      result = parseInt(number).toString(2); // تحويل عشري إلى ثنائي
+    } else if (conversionType === 'binToDec') {
+      result = parseInt(number, 2).toString(10); // تحويل ثنائي إلى عشري
+    } else if (conversionType === 'decToOct') {
+      result = parseInt(number).toString(8); // تحويل عشري إلى ثماني
+    } else if (conversionType === 'decToHex') {
+      result = parseInt(number).toString(16).toUpperCase(); // تحويل عشري إلى سداسي عشري
+    } else {
+      result = "Invalid selection";
+    }
+
+    document.getElementById('result').value = result;
+  }
+
+  // دالة تغيير الثيم
+  function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+  }
+</script>
+
+  <style>
+    /* تنسيق الأزرار والصفحة */
+    button, select, input {
+      width: 200px;
+      height: 40px;
+      margin: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      padding: 5px;
+    }
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
+  
+  </style>
+</head>
+
+<body>
+  
+  <div class="container">
+    <center>
+      <br>
+      <marquee direction="left"
+          style="height: 50px; color: rgb(2, 46, 31); background-color:white; padding: 1px; border-radius: 12px;">
+          <h2>
+              <p>Convert Number System</p>
+          </h2>
+      </marquee>
+  </center>
+    <!-- مكان إدخال الرقم -->
+    <input type="text" id="numberInput" placeholder="Enter your number">
+    <!-- قائمة اختيار نوع التحويل -->
+    <select id="conversionType">
+      <option value="decToBin">Decimal to Binary</option>
+      <option value="binToDec">Binary to Decimal</option>
+      <option value="decToOct">Decimal to Octal</option>
+      <option value="decToHex">Decimal to Hexadecimal</option>
+    </select>
+    <!-- زرار تحويل -->
+    <button onclick="convertNumber()">Convert</button>
+    <!-- مكان عرض النتيجة -->
+    <input placeholder="Result = " type="text" id="result" disabled>
+    <div>
+      <!-- زرار رجوع -->
+      <button onclick="location.href='convert.html'">Back</button>
+   
+</body>
+</html>
